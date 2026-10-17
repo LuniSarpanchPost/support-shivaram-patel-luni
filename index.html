@@ -84,7 +84,7 @@ function draw(){
  txt("निवेदक -",78,1210,31,p.deep,800,"left");
  framePhoto(applicant,78,1240,220,235,p.gold,"आपकी फोटो");
  fit((nm.value||"निवेदक का नाम").trim(),735,1350,60,34,800,t===1?p.deep:t===2?p.deep:p.pink,900);
-txt("Developed by Surendra Patel",600,1570,20,"#d8c7b0",700);
+txt("Developed by Surendra Patel",600,1570,20,"#d8c7b0",600);
 }
 function load(src,cb){const im=new Image();im.onload=()=>cb(im);im.onerror=()=>cb(null);im.src=src}
 load("candidate-photo.jpg",im=>{candidate=im;draw()});
