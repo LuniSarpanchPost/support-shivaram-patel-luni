@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="hi">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Shivaram Patel Luni — Poster Maker</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700;800;900&display=swap');
+:root{--wine:#500b20;--maroon:#74132f;--gold:#f5d23e;--cream:#fff8ef}
+*{box-sizing:border-box}body{margin:0;background:#f1eeeb;color:#21191b;font-family:'Noto Sans Devanagari',system-ui,sans-serif}
+header{background:linear-gradient(120deg,#300610,#74132f);color:#fff;padding:18px 14px;text-align:center;border-bottom:3px solid #d9b04c}
+header h1{font-size:clamp(22px,4vw,30px);margin:0;font-weight:900}header p{margin:5px 0 0;font-size:13px;color:#ead5aa}
+main{max-width:1200px;margin:auto;padding:16px;display:grid;grid-template-columns:300px minmax(0,1fr);gap:16px}
+.panel,.preview{background:white;border-radius:16px;padding:16px;box-shadow:0 7px 24px #3b101c13}
+h2{font-size:18px;margin:0 0 14px}label{display:block;font-size:14px;font-weight:800;margin:13px 0 6px}
+input[type=text],input[type=file]{width:100%;border:1px solid #d6cbd0;border-radius:10px;padding:11px;font:inherit;background:#fff}
+.templates{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}.template{border:1px solid #d4c5ca;background:#fff;border-radius:9px;padding:10px 3px;font-weight:800;font-size:12px}.template.active{border:2px solid #75132c;background:#fff0f3;color:#75132c}
+button{cursor:pointer;font-family:inherit}.primary,.secondary{width:100%;border:0;border-radius:10px;padding:12px;margin-top:10px;font-weight:900}.primary{background:#681128;color:#fff}.secondary{background:#f2e7d2;color:#4a0719}
+.hint,.note{font-size:12px;color:#74676c;line-height:1.55}.canvas-wrap{max-width:650px;margin:auto;background:#e5dfe0;overflow:hidden;border-radius:9px}canvas{display:block;width:100%;height:auto}
+@media(max-width:760px){main{grid-template-columns:1fr;padding:10px}.panel,.preview{padding:12px}}
+</style></head>
+<body>
+<header><h1>शिवाराम पटेल लूणी — पोस्टर मेकर</h1><p>प्रीमियम चुनावी पोस्टर · निवेदक का नाम और फोटो बदलें · PNG डाउनलोड</p></header>
+<main>
+<section class="panel">
+<h2>पोस्टर कस्टमाइज़ करें</h2>
+<label>डिजाइन थीम</label><div class="templates">
+<button class="template active" data-t="0">मरून-गोल्ड</button><button class="template" data-t="1">रॉयल पर्पल</button><button class="template" data-t="2">ब्लू-व्हाइट</button>
+</div>
+<label for="nm">निवेदक का नाम</label><input id="nm" type="text" maxlength="55" placeholder="अपना नाम लिखें">
+<label for="photo">निवेदक की फोटो</label><input id="photo" type="file" accept="image/*">
+<p class="hint">निवेदक की फोटो इसी ब्राउज़र में प्रोसेस होती है।</p>
+<button class="primary" id="dl">PNG पोस्टर डाउनलोड करें</button><button class="secondary" id="reset">रीसेट करें</button>
+<p class="note">शिवाराम पटेल की आपके द्वारा दी गई HD फोटो तीनों टेम्पलेट में शामिल है।</p>
+</section>
+<section class="preview"><h2>लाइव पोस्टर प्रीव्यू</h2><div class="canvas-wrap"><canvas id="c" width="1200" height="1600"></canvas></div><p class="note">Developed by Surendra Patel सबसे नीचे हल्के रंग में है।</p></section>
+</main>
+<script>
+(()=>{
+const C={village:"ग्राम पंचायत",place:"लूणी",role:"सरपंच पद हेतु",name:"शिवाराम पटेल",nickname:"(आपणो शिव)"};
+const P=[
+ {bg:"#650d27",deep:"#350611",gold:"#ffdf28",white:"#fff8ef",pink:"#e52f66"},
+ {bg:"#68005f",deep:"#35002f",gold:"#ffda39",white:"#fff9ff",pink:"#8d187f"},
+ {bg:"#0875ad",deep:"#03466f",gold:"#ffdc38",white:"#fff",pink:"#29cfe0"}
+];
+const cv=document.getElementById("c"),x=cv.getContext("2d"),nm=document.getElementById("nm"),file=document.getElementById("photo");
+let t=0,applicant=null,candidate=null;
+function txt(s,a,b,size,color,weight=800,align="center"){x.fillStyle=color;x.font=`${weight} ${size}px "Noto Sans Devanagari",system-ui,sans-serif`;x.textAlign=align;x.textBaseline="middle";x.fillText(s,a,b,1120)}
+function fit(s,a,b,max,min,width,color,weight=900){let z=max;do{x.font=`${weight} ${z}px "Noto Sans Devanagari",system-ui,sans-serif`;if(x.measureText(s).width<=width)break;z-=2}while(z>min);txt(s,a,b,z,color,weight)}
+function rr(a,b,w,h,r,fill,stroke,lw=4){x.beginPath();x.roundRect(a,b,w,h,r);if(fill){x.fillStyle=fill;x.fill()}if(stroke){x.strokeStyle=stroke;x.lineWidth=lw;x.stroke()}}
+function imageCover(im,a,b,w,h){if(!im)return;let sc=Math.max(w/im.width,h/im.height),dw=im.width*sc,dh=im.height*sc;x.save();x.beginPath();x.rect(a,b,w,h);x.clip();x.drawImage(im,a+(w-dw)/2,b+(h-dh)/2,dw,dh);x.restore()}
+function framePhoto(im,a,b,w,h,stroke,label){x.save();x.beginPath();x.roundRect(a,b,w,h,18);x.clip();if(im)imageCover(im,a,b,w,h);else{x.fillStyle="#f2e6e6";x.fillRect(a,b,w,h);txt(label,a+w/2,b+h/2,20,"#5c3441",600)}x.restore();rr(a,b,w,h,18,null,stroke,5)}
+function ornaments(p){x.strokeStyle=p.gold;x.lineWidth=3;x.strokeRect(22,22,1156,1556);x.strokeRect(39,39,1122,1522)}
+function draw(){
+ const p=P[t];x.clearRect(0,0,1200,1600);x.fillStyle=p.bg;x.fillRect(0,0,1200,1600);
+ if(t===0){
+  x.fillStyle=p.deep;x.fillRect(720,45,435,1110);x.fillStyle="#7d1a37";x.fillRect(45,45,675,1110);ornaments(p);
+  txt(C.village,380,95,51,p.gold);txt(C.place,380,153,67,p.white);x.fillStyle=p.gold;x.fillRect(100,202,560,5);
+  // Big HD portrait: scaled from the original supplied photo, no AI alteration.
+  imageCover(candidate,58,225,650,830);
+  txt("आपका साथ,",935,95,27,p.white,600);txt("हमारी ताकत",935,130,27,p.white,600);
+  txt("सरपंच",935,215,80,p.gold);txt("पद हेतु",935,278,43,p.white);
+  fit(C.name,935,365,52,37,405,p.white);txt(C.nickname,935,420,29,p.white);
+  x.fillStyle=p.gold;x.fillRect(770,460,330,5);
+  txt("ईमानदार • शिक्षित • योग्य",935,505,24,p.gold,700);
+  txt("जनसेवा और विकास",935,560,28,p.white);txt("के लिए समर्पित",935,598,27,p.white,600);
+  txt("आपका अपना",935,665,26,p.gold);txt("उम्मीदवार",935,704,33,p.white);
+  rr(68,1010,1065,130,18,p.gold,null);txt("शिवाराम पटेल  •  (आपणो शिव)",600,1054,43,p.deep);txt("ग्राम पंचायत लूणी",600,1104,28,p.deep);
+ } else if(t===1){
+  x.fillStyle=p.deep;x.fillRect(45,45,1110,1100);x.fillStyle="#f8eaf8";x.fillRect(45,1145,1110,390);ornaments(p);
+  txt("ग्राम पंचायत लूणी",600,100,49,p.white);txt("सरपंच पद हेतु",600,165,46,p.gold);
+  imageCover(candidate,65,220,555,800);
+  rr(640,225,475,790,25,"#7e1175",p.gold,4);txt("ईमानदार",878,300,37,p.white);txt("शिक्षित",878,350,37,p.white);txt("योग्य",878,400,37,p.white);
+  fit(C.name,878,500,52,35,430,p.gold);txt(C.nickname,878,552,30,p.white);x.fillStyle=p.gold;x.fillRect(705,595,345,4);
+  txt("संघर्षों से सीखा है",878,650,27,p.white,600);txt("मुश्किलों से लड़ना",878,695,33,p.gold);txt("जनता के हर मोड़ पर",878,750,26,p.white);txt("खड़े रहना",878,790,31,p.white);txt("आपका अपना उम्मीदवार",878,910,24,p.gold);
+ } else {
+  x.fillStyle="#f9fcff";x.fillRect(35,35,1130,1500);x.fillStyle=p.deep;x.fillRect(35,35,1130,180);x.fillStyle=p.bg;x.fillRect(35,1120,1130,415);ornaments(p);
+  rr(170,60,860,80,24,p.bg,p.gold,3);txt("ग्राम पंचायत - लूणी",600,100,45,p.white);
+  txt("सरपंच पद हेतु",325,275,48,p.deep);fit(C.name,325,350,56,38,560,p.deep);txt(C.nickname,325,405,30,p.deep);
+  imageCover(candidate,660,220,480,770);x.fillStyle=p.bg;x.fillRect(70,490,530,420);
+  txt("आपका विश्वास,",335,560,37,p.white);txt("मेरा हौसला",335,615,42,p.gold);txt("आपका आशीर्वाद",335,690,38,p.white);txt("मेरी ताकत",335,745,43,p.gold);
+ }
+ // Dedicated applicant area across every theme; larger portrait and better name space.
+ const panel = t===1 ? "#fffaff" : t===2 ? "#fff" : "#fff8ef";
+ x.fillStyle=panel;x.fillRect(45,1165,1110,340);x.fillStyle=p.gold;x.fillRect(45,1165,1110,8);
+ txt("निवेदक -",78,1210,31,p.deep,800,"left");
+ framePhoto(applicant,78,1240,220,235,p.gold,"आपकी फोटो");
+ fit((nm.value||"निवेदक का नाम").trim(),735,1350,60,34,800,t===1?p.deep:t===2?p.deep:p.pink,900);
+ txt("Developed by Surendra Patel",600,1580,15,t===1?"#b9a2ba":t===2?"#6fa3bd":"#8e6670",400);
+}
+function load(src,cb){const im=new Image();im.onload=()=>cb(im);im.onerror=()=>cb(null);im.src=src}
+load("candidate-photo.jpg",im=>{candidate=im;draw()});
+nm.addEventListener("input",draw);
+file.addEventListener("change",()=>{const f=file.files&&file.files[0];if(!f){applicant=null;draw();return}if(!f.type.startsWith("image/")){alert("कृपया फोटो फ़ाइल चुनें");return}const r=new FileReader();r.onload=e=>load(e.target.result,im=>{applicant=im;draw()});r.readAsDataURL(f)});
+document.querySelectorAll(".template").forEach(b=>b.addEventListener("click",()=>{t=Number(b.dataset.t);document.querySelectorAll(".template").forEach(q=>q.classList.toggle("active",q===b));draw()}));
+document.getElementById("dl").addEventListener("click",()=>{const a=document.createElement("a");a.download="support-shivaram-patel-luni.png";a.href=cv.toDataURL("image/png");a.click()});
+document.getElementById("reset").addEventListener("click",()=>{nm.value="";file.value="";applicant=null;draw()});draw();
+})();
+</script></body></html>
