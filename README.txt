@@ -1,22 +1,22 @@
-SHIVARAM PATEL LUNI — PREMIUM POSTER MAKER (v2)
+SHIVARAM PATEL LUNI — PREMIUM POSTER MAKER FINAL
 
-Files:
+Included:
 - index.html
-- candidate-photo.jpg
-
-GitHub update:
-1. Open repository LuniSarpanchPost/support-shivaram-patel-luni
-2. Upload/replace index.html and candidate-photo.jpg in the repository root (same level as README.txt).
-3. Commit changes.
-4. Wait for GitHub Pages to redeploy, then refresh the existing website link.
+- candidate-photo.jpg (the exact candidate photo supplied by the user)
+- README.txt
 
 Features:
-- Five vertical 9:16 poster themes (1080 x 1920)
-- User can enter Nivedak name and upload their photo
+- Five vertical 9:16 poster themes, 1080 x 1920
+- Candidate photo is fixed; no candidate-photo upload control for visitors
+- Visitors can edit only the nominator/applicant name and upload the nominator photo
+- No helper text under the nominator photo upload
+- No extra helper text under Reset
 - PNG download
-- Mobile share sheet for image sharing where supported
-- WhatsApp share-link button and copy-portal-link button
-- Candidate photo is the supplied photo and is processed locally in the browser
+- Mobile share sheet where supported, WhatsApp link sharing, copy portal link
+- "Developed by Surendra Patel" and portal URL at the bottom of the exported poster
 
-Important sharing limitation:
-The browser cannot force-post to WhatsApp Status, Instagram Stories, or Facebook Stories directly. On supported mobile browsers, Share Poster opens the system share sheet so the user can choose a supported app. Otherwise download the PNG and upload it manually.
+Update GitHub Pages:
+1. Extract this ZIP.
+2. Open https://github.com/LuniSarpanchPost/support-shivaram-patel-luni
+3. Upload/replace index.html and candidate-photo.jpg in the repository root.
+4. Commit changes, wait a few minutes, then refresh the existing Pages URL.
