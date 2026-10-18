@@ -1,21 +1,19 @@
-SHIVARAM PATEL LUNI — PREMIUM POSTER MAKER (PHOTO-CROP FIX)
+SHIVARAM PATEL LUNI — PREMIUM POSTER MAKER (v2: Haveli / Scroll style)
 
-Included:
-- index.html
-- candidate-photo.jpg (exact supplied candidate photo, not AI-generated)
+Files:
+- index.html            : poster maker (sab kuch isi ek file me)
+- candidate-cutout.png  : candidate ki photo, blue background hata kar (poster me yahi use hoti hai)
+- candidate-photo.jpg   : original photo (backup)
 - README.txt
 
-Updates:
-- Candidate photo is fixed and cannot be uploaded/replaced by portal visitors.
-- Candidate portrait is fitted inside its frame without cropping the head or hands.
-- The modern-professional theme uses a portrait-oriented candidate photo area.
-- Five vertical 1080x1920 poster themes.
-- Visitors can edit only nominator name and photo.
-- PNG download, mobile share sheet where supported, WhatsApp link sharing, copy portal link.
-- No helper text under the nominator photo input or Reset button.
-- Poster credit and portal link remain at the bottom of the exported poster.
+Features:
+- 5 vertical 1080x1920 themes: Royal Classic, Modern Professional, Rajasthani, Vikas, Yuva
+- Candidate photo fixed hai, visitor badal nahi sakta. Sir aur haath poore dikhte hain.
+- Visitor sirf nirvedak ka naam aur photo badal sakta hai
+- PNG download, share sheet, WhatsApp link, portal link copy
+- Neeche "Developed by Surendra Patel" aur portal link poster me rehte hain
 
-GitHub update:
-1. Extract the ZIP.
-2. In the repository root, replace index.html and candidate-photo.jpg.
-3. Commit changes and wait a few minutes before refreshing the same Pages URL.
+GitHub par update:
+1. ZIP extract karein.
+2. Repository root me index.html, candidate-cutout.png, candidate-photo.jpg replace/upload karein.
+3. Commit karein, 2-3 minute baad same Pages URL refresh karein (Ctrl+F5).

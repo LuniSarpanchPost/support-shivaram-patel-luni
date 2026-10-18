@@ -3,166 +3,226 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#4d071b">
+<meta name="theme-color" content="#4a0716">
 <title>शिवाराम पटेल लूणी — प्रीमियम पोस्टर मेकर</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@500;600;700;800;900&family=Rozha+One&display=swap" rel="stylesheet">
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700;800;900&display=swap');
-:root{--wine:#56091f;--wine2:#861b3b;--gold:#f0ce70;--cream:#fff5e5;--ink:#2d1119;--green:#18754f}
-*{box-sizing:border-box}
-body{margin:0;background:#f4eee8;color:var(--ink);font-family:"Noto Sans Devanagari",system-ui,sans-serif}
-header{position:relative;overflow:hidden;text-align:center;padding:22px 14px 18px;color:#ffe9a7;background:radial-gradient(ellipse at 50% 0,#8d2840 0,#52091f 55%,#27040d 100%);border-bottom:4px solid #d9ad48}
-header:before,header:after{content:"✦ ❧ ✦";position:absolute;top:10px;color:#e9c96c;font-size:23px;opacity:.75}
-header:before{left:12px}header:after{right:12px}
-header h1{font-size:clamp(22px,4vw,36px);line-height:1.3;margin:0;font-weight:900;text-shadow:0 2px 0 #30030d}
-header .sub{font-size:14px;margin:8px 0 0;color:#fff4d8}
-main{max-width:1160px;margin:0 auto;padding:14px;display:grid;grid-template-columns:minmax(270px,350px) minmax(0,1fr);gap:14px;align-items:start}
-.panel,.preview,.gallery{background:#fff;border-radius:18px;padding:15px;box-shadow:0 7px 25px #46101a10;border:1px solid #f0e4d9}
-h2{font-size:19px;margin:0 0 12px}
-label{display:block;font-size:14px;font-weight:800;margin:12px 0 6px}
-input[type=text],input[type=file]{display:block;width:100%;font:inherit;font-size:15px;border:1px solid #d9c9c9;border-radius:11px;padding:11px;background:#fff}
-input[type=file]{padding:10px}
-.templates{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
-.templ{border:1px solid #ddc9ba;border-radius:11px;background:#fffaf2;padding:10px 7px;color:#5d1429;font:700 13px inherit;min-height:46px}
-.templ.active{border:2px solid #8c1737;background:#fff0f1;box-shadow:0 3px 12px #7b17301a}
-.btn{width:100%;border:0;border-radius:11px;padding:13px 10px;margin-top:9px;font:800 15px inherit;cursor:pointer}
-.download{background:linear-gradient(100deg,#56091f,#901c3e);color:white}
-.share{background:linear-gradient(100deg,#14764e,#20865b);color:white}
-.soft{background:#f4e7d0;color:#4c0b20;border:1px solid #e8d1a8}
-.twocol{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-.hint{font-size:12px;line-height:1.55;color:#887a7a;margin:9px 0 0}
-.preview-head{display:flex;align-items:center;justify-content:space-between;gap:8px}
-.pill{font-size:11px;background:#f5eadb;border-radius:999px;padding:5px 8px;color:#702039;white-space:nowrap}
-.canvas-wrap{max-width:500px;margin:0 auto;background:#eadfdb;border-radius:12px;overflow:hidden;box-shadow:0 5px 20px #32101920}
+:root{--wine:#4a0716;--wine2:#7d1530;--gold:#f0c85c;--gold2:#c8922e;--cream:#fff6e4;--ink:#2d1119;--green:#17724d}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{margin:0;background:#efe6da;color:var(--ink);font-family:"Noto Sans Devanagari",system-ui,sans-serif}
+.wrap{max-width:600px;margin:0 auto;background:#fbf4e8;min-height:100vh;box-shadow:0 0 40px #4a071620}
+header{position:relative;overflow:hidden;text-align:center;padding:26px 14px 20px;color:var(--gold);background:radial-gradient(ellipse at 50% -10%,#a8283f 0,#5c0b1f 55%,#2c040c 100%);border-bottom:4px solid var(--gold2)}
+header svg{position:absolute;bottom:0;width:46%;height:78%;opacity:.5}
+header svg.l{left:0}header svg.r{right:0;transform:scaleX(-1)}
+header h1{position:relative;font-family:"Rozha One","Noto Sans Devanagari",serif;font-weight:400;font-size:clamp(30px,8vw,44px);line-height:1.2;margin:0;background:linear-gradient(#fff3bd,#f1c04b 55%,#b9822a);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 2px 0 #2a030a)}
+header .t2{position:relative;font-weight:800;font-size:clamp(17px,4.6vw,24px);color:#ffe9a8;margin:2px 0 0}
+header .sub{position:relative;font-size:13px;margin:10px auto 0;color:#fff1cf;font-weight:600}
+main{padding:14px}
+.frame{padding:10px;border-radius:22px;background:linear-gradient(135deg,#fff3c4,#d9a63a 40%,#f8e08f 70%,#b8842a);box-shadow:0 10px 30px #4a071630}
+.canvas-wrap{border-radius:14px;overflow:hidden;background:#3a0510}
 canvas{display:block;width:100%;height:auto}
-.footer-note{text-align:center;color:#827477;font-size:12px;margin:10px 0 0}
-.gallery{grid-column:1/-1}
-.gallery h2{margin-bottom:10px}
-.gallery-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px}
-.thumb{padding:5px;border:1px solid #e3d3c4;background:#fffaf4;border-radius:9px;cursor:pointer;text-align:center;color:#4b1725;font:700 11px inherit}
-.thumb canvas{border-radius:5px;margin-bottom:5px}
-.thumb.active{border:2px solid #9c1c3e;background:#fff0f0}
-@media(max-width:780px){main{grid-template-columns:1fr;padding:9px}.panel,.preview,.gallery{padding:12px}.gallery-grid{grid-template-columns:repeat(5,minmax(0,1fr));gap:5px}.thumb{font-size:10px;padding:3px}.canvas-wrap{max-width:480px}header{padding-top:22px}}
-@media(min-width:781px){.panel{position:sticky;top:12px}}
+.card{background:#fff;border:1px solid #efe0cc;border-radius:16px;padding:14px;margin-top:14px;box-shadow:0 6px 20px #4a07160d}
+.row{display:grid;grid-template-columns:118px 1fr;gap:10px;align-items:center}
+.row+.row{margin-top:12px}
+.row label{font-weight:800;font-size:15px;line-height:1.25}
+input[type=text],input[type=file]{width:100%;font:inherit;font-size:15px;border:1px solid #dccbb8;border-radius:11px;padding:11px;background:#fffdf9}
+input:focus-visible,button:focus-visible{outline:3px solid #c8922e;outline-offset:2px}
+.btn{width:100%;border:0;border-radius:12px;padding:14px 10px;line-height:1.35;white-space:normal;margin-top:10px;font:800 16px "Noto Sans Devanagari",sans-serif;cursor:pointer}
+.download{background:linear-gradient(100deg,#4a0716,#8f1d3e);color:#fff}
+.share{background:linear-gradient(100deg,#12684a,#1f8a5e);color:#fff}
+.soft{background:#f6e8cf;color:#4a0716;border:1px solid #e6cf9f}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.two .btn{font-size:14.5px}
+h2{font-size:18px;margin:0 0 10px;color:var(--wine)}
+.thumbs{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px}
+.thumb{padding:3px;border:2px solid transparent;background:#fffaf1;border-radius:9px;cursor:pointer;text-align:center;color:#4a0716;font:700 11px "Noto Sans Devanagari",sans-serif}
+.thumb canvas{border-radius:6px;margin-bottom:4px}
+.thumb.active{border-color:#d3243f;background:#fff0f0}
+@media(max-width:420px){.row{grid-template-columns:1fr;gap:6px}.thumb{font-size:10px}}
 </style>
 </head>
 <body>
+<div class="wrap">
 <header>
-<h1>शिवाराम पटेल लूणी — प्रीमियम पोस्टर मेकर</h1>
-<p class="sub">5 प्रीमियम थीम · निवेदक का नाम और फोटो बदलें · PNG डाउनलोड</p>
+<svg class="l" viewBox="0 0 200 120" preserveAspectRatio="xMinYMax meet" fill="#f0c85c"><path d="M0 120V70h20V50h8v-12h4v12h8v20h14V40h6V28h4V16h4v12h4v12h6v30h14V60h10V48h6V60h10v60z"/><path d="M118 120V84h12v36zM140 120V74h10v46z"/></svg>
+<svg class="r" viewBox="0 0 200 120" preserveAspectRatio="xMinYMax meet" fill="#f0c85c"><path d="M0 120V70h20V50h8v-12h4v12h8v20h14V40h6V28h4V16h4v12h4v12h6v30h14V60h10V48h6V60h10v60z"/><path d="M118 120V84h12v36zM140 120V74h10v46z"/></svg>
+<h1>शिवाराम पटेल लूणी</h1>
+<p class="t2">प्रीमियम पोस्टर मेकर</p>
+<p class="sub">5 प्रीमियम थीम • निवेदक का नाम और फोटो बदलें • PNG डाउनलोड</p>
 </header>
 <main>
-<section class="panel">
-<h2>पोस्टर कस्टमाइज़ करें</h2>
-<label>डिज़ाइन थीम चुनें</label>
-<div class="templates">
-<button class="templ active" data-t="0">रॉयल क्लासिक</button>
-<button class="templ" data-t="1">आधुनिक प्रोफेशनल</button>
-<button class="templ" data-t="2">राजस्थानी परंपरा</button>
-<button class="templ" data-t="3">विकास थीम</button>
-<button class="templ" data-t="4">युवा और भविष्य</button>
-</div>
-<label for="nm">निवेदक का नाम</label>
-<input id="nm" type="text" maxlength="55" placeholder="आपका नाम यहाँ लिखें">
-<label for="photo">निवेदक की फोटो</label>
-<input id="photo" type="file" accept="image/*">
+<div class="frame"><div class="canvas-wrap"><canvas id="poster" width="1080" height="1920"></canvas></div></div>
+
+<section class="card">
+<div class="row"><label for="nm">निवेदक का नाम</label><input id="nm" type="text" maxlength="55" placeholder="आपका नाम यहाँ लिखें" autocomplete="off"></div>
+<div class="row"><label for="photo">निवेदक की फोटो</label><input id="photo" type="file" accept="image/*"></div>
+</section>
+
 <button class="btn download" id="dl">↓ PNG पोस्टर डाउनलोड करें</button>
-<button class="btn share" id="share">↗ पोस्टर शेयर करें (WhatsApp / Instagram / Facebook)</button>
-<div class="twocol">
+<button class="btn share" id="share">↗ पोस्टर शेयर करें<br><small style="font-weight:600;font-size:12.5px;opacity:.9">WhatsApp • Instagram • Facebook</small></button>
+<div class="two">
 <button class="btn soft" id="wa">WhatsApp पर लिंक भेजें</button>
 <button class="btn soft" id="copy">पोर्टल लिंक कॉपी करें</button>
 </div>
-<button class="btn soft" id="reset">रीसेट करें</button>
-</section>
-<section class="preview">
-<div class="preview-head"><h2>पोस्टर प्रीव्यू</h2><span class="pill">1080 × 1920 · स्टेटस साइज</span></div>
-<div class="canvas-wrap"><canvas id="poster" width="1080" height="1920"></canvas></div>
+<button class="btn soft" id="reset">↺ रीसेट करें</button>
 
-</section>
-<section class="gallery">
-<h2>सभी टेम्पलेट प्रीव्यू</h2>
-<div class="gallery-grid" id="gallery"></div>
+<section class="card">
+<h2>टेम्पलेट चुनें</h2>
+<div class="thumbs" id="gallery"></div>
 </section>
 </main>
+</div>
+
 <script>
 (()=>{
-const PORTAL=location.href.split('#')[0];
-const C={village:"ग्राम पंचायत लूणी",role:"सरपंच पद हेतु",name:"शिवाराम पटेल",nick:"(आपणो शिव)"};
+const W=1080,H=1920,PORTAL=location.href.split('#')[0];
+const FD='"Rozha One","Noto Sans Devanagari",serif',FB='"Noto Sans Devanagari",system-ui,sans-serif';
+const NAMES=['रॉयल क्लासिक','आधुनिक प्रोफेशनल','राजस्थानी परंपरा','विकास थीम','युवा और भविष्य'];
+const HY=1250;           // horizon line
 const themes=[
-{bg:"#59091d",deep:"#26040d",gold:"#f2cf69",cream:"#fff2d8",accent:"#a51e3b",tag:"आपका विश्वास • हमारी जिम्मेदारी",kind:0},
-{bg:"#f7ead2",deep:"#173650",gold:"#d9ac45",cream:"#fffaf0",accent:"#9a2d25",tag:"बेहतर कल के लिए • सही नेतृत्व",kind:1},
-{bg:"#68111f",deep:"#31050d",gold:"#f0c45c",cream:"#fff0d6",accent:"#c84a2d",tag:"हमारा संकल्प • मजबूत पंचायत",kind:2},
-{bg:"#e9f4fa",deep:"#173f5a",gold:"#d7a83b",cream:"#fffdf4",accent:"#17694f",tag:"विकास • पारदर्शिता • जनसेवा",kind:3},
-{bg:"#f9e8c7",deep:"#53101c",gold:"#f0bd4c",cream:"#fff8e9",accent:"#183f57",tag:"नई सोच • नई ऊर्जा • नई उम्मीद",kind:4}
+{sky:['#6e0c20','#b63a1e','#f4a13a'],glow:'#ffd27a',hav:'#4f0d18',win:'#ffb347',ground:['#5a0f1a','#2a030a'],deep:'#4a0716',deep2:'#240308',acc:'#a21d36',ink:'#fff2d2',s:['आपका विश्वास','हमारी जिम्मेदारी'],fx:['curtain','rays','trees']},
+{sky:['#9fd2f2','#d9eefa','#fff2d0'],glow:'#ffffff',hav:'#c9a56a',win:'#7fb4d6',ground:['#cdb98f','#8f7a52'],deep:'#0f3558',deep2:'#071f38',acc:'#9a2d25',ink:'#0f3558',s:['बेहतर कल के लिए','सही नेतृत्व'],fx:['clouds','trees']},
+{sky:['#4f0a1c','#a82c1f','#f08a2b'],glow:'#ffcf6b',hav:'#3e0a12',win:'#ffcf6b',ground:['#4a0b14','#220309'],deep:'#5a0b1e',deep2:'#260410',acc:'#c24a22',ink:'#ffe9bd',s:['हमारा संकल्प','मजबूत पंचायत'],fx:['dots','rays','trees']},
+{sky:['#6fbdf0','#cbe8f7','#f2f7e4'],glow:'#fffbe0',hav:'#bf9c62',win:'#6fb3dc',ground:['#4f9a4a','#1f5a2c'],deep:'#0f4a3a',deep2:'#06271e',acc:'#17694f',ink:'#0f4a3a',s:['विकास, पारदर्शिता','और जनसेवा'],fx:['clouds','trees']},
+{sky:['#ffd56e','#ffa23a','#e6502a'],glow:'#fff3c0',hav:'#74261a',win:'#ffe28a',ground:['#7a2a1a','#3a0f0a'],deep:'#5a0f1c',deep2:'#2c0510',acc:'#c0391f',ink:'#4a0716',s:['नई सोच','उज्ज्वल भविष्य'],fx:['rays','crowd']}
 ];
-const cv=document.getElementById('poster'),x=cv.getContext('2d'),nm=document.getElementById('nm'),file=document.getElementById('photo'),gallery=document.getElementById('gallery');
-let t=0,applicant=null,candidate=null,thumbs=[];
-function txt(s,a,b,size,color,weight=800,align='center',max=1000){x.fillStyle=color;x.font=`${weight} ${size}px "Noto Sans Devanagari",system-ui,sans-serif`;x.textAlign=align;x.textBaseline='middle';x.fillText(s,a,b,max)}
-function fit(s,a,b,max,min,width,color,weight=900){let z=max;do{x.font=`${weight} ${z}px "Noto Sans Devanagari",system-ui,sans-serif`;if(x.measureText(s).width<=width)break;z-=2}while(z>min);txt(s,a,b,z,color,weight,'center',width)}
+const cv=document.getElementById('poster'),nm=document.getElementById('nm'),file=document.getElementById('photo'),gallery=document.getElementById('gallery');
+let x=cv.getContext('2d'),t=0,applicant=null,cand=null,thumbs=[];
+
+/* ---------- helpers ---------- */
+function txt(s,a,b,size,color,o={}){const{w=800,al='center',max=1000,f=FB,sh=null,st=null}=o;x.font=`${w} ${size}px ${f}`;x.textAlign=al;x.textBaseline='middle';x.lineJoin='round';
+ if(st){x.lineWidth=st[1];x.strokeStyle=st[0];x.strokeText(s,a,b,max)}
+ if(sh){x.shadowColor=sh[0];x.shadowBlur=sh[1];x.shadowOffsetX=sh[2]||0;x.shadowOffsetY=sh[3]||0}
+ x.fillStyle=color;x.fillText(s,a,b,max);x.shadowColor='transparent';x.shadowBlur=0;x.shadowOffsetX=0;x.shadowOffsetY=0}
+function fit(s,a,b,maxS,minS,width,color,o={}){let z=maxS;const w=o.w||800,f=o.f||FB;do{x.font=`${w} ${z}px ${f}`;if(x.measureText(s).width<=width)break;z-=2}while(z>minS);txt(s,a,b,z,color,{...o,max:width})}
+function goldGrad(y,h){const g=x.createLinearGradient(0,y-h/2,0,y+h/2);g.addColorStop(0,'#fff6c8');g.addColorStop(.45,'#f6c850');g.addColorStop(.75,'#c88a22');g.addColorStop(1,'#f3cf6a');return g}
 function rr(a,b,w,h,r,fill,stroke,lw=4){x.beginPath();x.roundRect(a,b,w,h,r);if(fill){x.fillStyle=fill;x.fill()}if(stroke){x.strokeStyle=stroke;x.lineWidth=lw;x.stroke()}}
-function cover(im,a,b,w,h){if(!im)return;const sc=Math.max(w/im.width,h/im.height),dw=im.width*sc,dh=im.height*sc;x.save();x.beginPath();x.rect(a,b,w,h);x.clip();x.drawImage(im,a+(w-dw)/2,b+(h-dh)/2,dw,dh);x.restore()}
-function ornate(p){x.strokeStyle=p.gold;x.lineWidth=4;x.strokeRect(24,24,1032,1872);x.lineWidth=2;x.strokeRect(42,42,996,1836);for(const [a,b,sx,sy] of [[55,55,1,1],[1025,55,-1,1],[55,1865,1,-1],[1025,1865,-1,-1]]){x.save();x.translate(a,b);x.scale(sx,sy);x.strokeStyle=p.gold;x.lineWidth=3;x.beginPath();x.moveTo(0,55);x.quadraticCurveTo(0,0,55,0);x.lineTo(90,0);x.moveTo(0,27);x.quadraticCurveTo(27,27,27,0);x.stroke();x.restore()}}
-function photo(im,a,b,w,h,p,label){x.save();x.beginPath();x.roundRect(a,b,w,h,22);x.clip();x.fillStyle=(p.cream||"#fff8e9");x.fillRect(a,b,w,h);if(im){const sc=Math.min(w/im.width,h/im.height),dw=im.width*sc,dh=im.height*sc;x.drawImage(im,a+(w-dw)/2,b+(h-dh)/2,dw,dh)}else{const g=x.createLinearGradient(a,b,a+w,b+h);g.addColorStop(0,'#c9e7ff');g.addColorStop(1,'#7db9ed');x.fillStyle=g;x.fillRect(a,b,w,h);txt(label,a+w/2,b+h/2,25,'#244c70',700)}x.restore();rr(a,b,w,h,22,null,p.gold,5)}
-function pill(p,y,s){rr(120,y,840,76,24,p.deep,p.gold,3);txt(s,540,y+38,30,p.cream,800,'center',790)}
-function applicantBlock(p){
- rr(65,1470,950,315,28,p.deep,p.gold,5);
- photo(applicant,92,1518,155,185,p,"आपकी फोटो");
- txt("निवेदक",280,1545,27,p.gold,800,'left');
- fit((nm.value||"आपका नाम यहाँ लिखें").trim(),620,1620,43,25,670,p.cream,900);
- x.fillStyle=p.gold;x.fillRect(280,1660,660,3);
- txt("जनसेवा • विश्वास • प्रगति",610,1705,25,p.cream,700,'center',620);
- txt("Developed by Surendra Patel",540,1827,22,"#d8c7a5",600,'center',900);
- txt(PORTAL,540,1860,12,"#d8c7a5",500,'center',940);
+function cover(im,a,b,w,h){const sc=Math.max(w/im.width,h/im.height),dw=im.width*sc,dh=im.height*sc;x.drawImage(im,a+(w-dw)/2,b+(h-dh)/2,dw,dh)}
+
+/* ---------- scenery ---------- */
+function dome(cx,by,r,h,col){x.fillStyle=col;x.beginPath();x.moveTo(cx-r,by);x.bezierCurveTo(cx-r,by-h*1.1,cx-r*.25,by-h*.85,cx,by-h*1.3);x.bezierCurveTo(cx+r*.25,by-h*.85,cx+r,by-h*1.1,cx+r,by);x.closePath();x.fill();x.fillRect(cx-2,by-h*1.3-28,4,30);x.beginPath();x.arc(cx,by-h*1.3-30,6,0,7);x.fill()}
+function chhatri(cx,by,w,h,col){x.fillStyle=col;const pw=w/7;for(const i of[0,2,4,6])x.fillRect(cx-w/2+i*pw,by-h*.5,pw,h*.5);x.fillRect(cx-w/2-5,by-h*.5-9,w+10,11);dome(cx,by-h*.5-9,w/2,h*.5,col)}
+function arch(cx,by,w,h,col){x.fillStyle=col;x.beginPath();x.moveTo(cx-w/2,by);x.lineTo(cx-w/2,by-h+w/2);x.arc(cx,by-h+w/2,w/2,Math.PI,0);x.lineTo(cx+w/2,by);x.closePath();x.fill()}
+function haveli(cx,by,s,col,win){
+ const bw=520*s,bh=250*s;x.fillStyle=col;x.fillRect(cx-bw/2,by-bh,bw,bh);
+ const n=15;for(let i=0;i<n;i++)x.fillRect(cx-bw/2+i*bw/n+3,by-bh-16*s,bw/n-6,16*s);
+ for(const sx of[-1,1]){const tx=cx+sx*(bw/2+10*s);x.fillStyle=col;x.fillRect(tx-46*s,by-bh-95*s,92*s,bh+95*s);chhatri(tx,by-bh-95*s,92*s,110*s,col)}
+ x.fillStyle=col;x.fillRect(cx-90*s,by-bh-70*s,180*s,bh+70*s);chhatri(cx,by-bh-70*s,150*s,150*s,col);
+ for(const sx of[-1,1])chhatri(cx+sx*150*s,by-bh,70*s,80*s,col);
+ x.globalAlpha=.85;
+ for(let r=0;r<2;r++)for(let c=0;c<6;c++){const wx=cx-bw/2+(c+.5)*bw/6+0;if(Math.abs(wx-cx)<95*s&&r===1)continue;arch(wx,by-bh+(r?170:95)*s,28*s,56*s,win)}
+ arch(cx,by-bh-12*s,40*s,70*s,win);arch(cx,by,70*s,110*s,win);
+ for(const sx of[-1,1]){const tx=cx+sx*(bw/2+10*s);arch(tx,by-bh-30*s,26*s,50*s,win);arch(tx,by-bh+90*s,26*s,50*s,win)}
+ x.globalAlpha=1}
+function tree(a,b,s,col,tr='#3b2414'){x.fillStyle=tr;x.fillRect(a-7*s,b-70*s,14*s,70*s);x.fillStyle=col;for(const[dx,dy,r]of[[0,-110,50],[-38,-82,40],[38,-82,40],[0,-70,44]]){x.beginPath();x.arc(a+dx*s,b+dy*s,r*s,0,7);x.fill()}}
+function crowd(y,col){x.fillStyle=col;for(let i=0;i<22;i++){const a=560+i*24+(i%2)*8,r=15+(i*7%5),yy=y-(i%3)*14;x.beginPath();x.arc(a,yy-48,r,0,7);x.fill();x.beginPath();x.ellipse(a,yy,r*1.7,46,0,Math.PI,0);x.fill();if(i%4===1){x.fillRect(a+8,yy-120,5,70);x.fillStyle='#ffd34d';x.beginPath();x.moveTo(a+13,yy-120);x.lineTo(a+50,yy-108);x.lineTo(a+13,yy-95);x.fill();x.fillStyle=col}}}
+function cloud(a,b,s,al){x.fillStyle=`rgba(255,255,255,${al})`;for(const[dx,dy,r]of[[0,0,34],[38,-14,44],[84,0,36],[40,10,40]]){x.beginPath();x.arc(a+dx*s,b+dy*s,r*s,0,7);x.fill()}}
+function curtain(){
+ const g=x.createLinearGradient(40,40,360,600);g.addColorStop(0,'#c0182d');g.addColorStop(.5,'#8d0f21');g.addColorStop(1,'#d3283d');
+ x.fillStyle=g;x.beginPath();x.moveTo(40,40);x.lineTo(380,40);x.bezierCurveTo(330,170,380,300,250,430);x.bezierCurveTo(170,520,230,640,120,760);x.lineTo(40,800);x.closePath();x.fill();
+ x.strokeStyle='rgba(255,120,120,.28)';x.lineWidth=7;for(const k of[0,1,2]){x.beginPath();x.moveTo(110+k*90,40);x.bezierCurveTo(70+k*90,200,150+k*70,380,60+k*60,720);x.stroke()}
+ x.strokeStyle='rgba(60,0,10,.35)';x.lineWidth=5;for(const k of[0,1,2]){x.beginPath();x.moveTo(150+k*90,40);x.bezierCurveTo(100+k*90,220,190+k*70,400,100+k*60,740);x.stroke()}
+ x.fillStyle='#e8b94a';x.fillRect(40,40,340,14)}
+function rays(cx,cy,col){x.save();x.fillStyle=col;for(let i=0;i<26;i++){const a=i*Math.PI/13,b=a+.09;x.beginPath();x.moveTo(cx,cy);x.lineTo(cx+Math.cos(a)*1700,cy+Math.sin(a)*1700);x.lineTo(cx+Math.cos(b)*1700,cy+Math.sin(b)*1700);x.fill()}x.restore()}
+
+function scenery(p){
+ const g=x.createLinearGradient(0,0,0,HY);g.addColorStop(0,p.sky[0]);g.addColorStop(.55,p.sky[1]);g.addColorStop(1,p.sky[2]);x.fillStyle=g;x.fillRect(0,0,W,HY+10);
+ const sun=x.createRadialGradient(790,560,10,790,560,620);sun.addColorStop(0,p.glow);sun.addColorStop(.35,p.glow+'88');sun.addColorStop(1,p.glow+'00');x.fillStyle=sun;x.fillRect(0,0,W,HY);
+ if(p.fx.includes('rays'))rays(790,560,'rgba(255,236,170,.10)');
+ if(p.fx.includes('dots')){x.fillStyle='rgba(255,215,120,.16)';for(let i=0;i<14;i++)for(let j=0;j<22;j++){x.beginPath();x.arc(30+i*80+(j%2)*40,40+j*54,5,0,7);x.fill()}}
+ if(p.fx.includes('clouds')){cloud(560,150,1.6,.75);cloud(880,330,1.2,.6);cloud(120,420,1.3,.55)}
+ haveli(778,HY,.98,p.hav,p.win);
+ const gg=x.createLinearGradient(0,HY-6,0,1350);gg.addColorStop(0,p.ground[0]);gg.addColorStop(1,p.ground[1]);x.fillStyle=gg;x.fillRect(0,HY,W,110);
+ if(p.fx.includes('trees')){const tc=p.sky[1].startsWith('#6f')||p.deep==='#0f4a3a'?'#2f8a3e':'#2c5a2a';tree(600,HY+14,1.1,tc);tree(1016,HY+16,.95,tc)}
+ if(p.fx.includes('crowd'))crowd(HY+84,'#2a0a0c');
+ if(p.fx.includes('curtain'))curtain();
 }
-function draw(){
- const p=themes[t];x.clearRect(0,0,1080,1920);
- const bg=x.createLinearGradient(0,0,1080,1920);bg.addColorStop(0,p.bg);bg.addColorStop(1,p.deep);x.fillStyle=bg;x.fillRect(0,0,1080,1920);ornate(p);
- if(t===0){
-  const g=x.createLinearGradient(0,80,0,1400);g.addColorStop(0,"#86132c");g.addColorStop(1,p.deep);rr(58,58,964,1370,35,g,p.gold,7);
-  txt(C.village,540,120,48,p.gold);txt(C.role,540,180,42,p.cream);pill(p,225,p.tag);
-  photo(candidate,92,320,455,700,p,"उम्मीदवार की फोटो");
-  txt("शिवाराम",780,390,59,p.gold);txt("पटेल",780,455,59,p.gold);txt("(आपणो शिव)",780,520,30,p.cream);
-  x.fillStyle=p.gold;x.fillRect(640,570,280,4);txt("ईमानदार नेतृत्व",780,635,30,p.cream);txt("विकास की नई सोच",780,690,30,p.cream);
-  rr(590,760,360,300,25,"#f8dfaa",p.gold,4);txt("आपका विश्वास",770,825,31,p.deep);txt("हमारी जिम्मेदारी",770,885,33,p.accent);txt("जनता के साथ",770,955,27,p.deep);
-  txt("विकास का संकल्प",540,1190,30,p.gold);txt("जनता की आवाज़ • पारदर्शिता",540,1240,27,p.cream);
- }else if(t===1){
-  rr(55,55,970,1375,26,p.cream,p.gold,6);txt(C.village,540,120,49,p.deep);txt(C.role,540,180,42,p.accent);
-  txt("शिवाराम पटेल",540,275,62,p.deep);txt("(आपणो शिव)",540,330,30,p.accent);
-  photo(candidate,185,365,710,800,p,p.gold);pill(p,1190,p.tag);
-  txt("जनता की आवाज़",540,1310,33,p.deep);txt("विकास का संकल्प",540,1360,33,p.accent);
- }else if(t===2){
-  txt("म्हारी लूणी • म्हारो मान",540,115,36,p.gold);txt(C.village,540,180,47,p.cream);txt(C.role,540,240,40,p.gold);
-  photo(candidate,95,300,890,760,p,p.gold);txt("शिवाराम पटेल",540,1120,62,p.gold);txt("(आपणो शिव)",540,1180,31,p.cream);
-  rr(110,1230,860,175,20,"#f6d69c",p.gold,4);txt("हमारा संकल्प • मजबूत पंचायत",540,1290,34,p.deep);txt("अपणायत • विश्वास • विकास",540,1350,28,p.accent);
- }else if(t===3){
-  rr(55,55,970,1375,24,"#f8fcff",p.gold,6);x.fillStyle=p.deep;x.fillRect(60,60,960,235);
-  txt(C.village,540,120,47,p.cream);txt(C.role,540,180,42,p.gold);txt("शिवाराम पटेल",540,250,42,p.cream);
-  photo(candidate,80,330,520,710,p,p.gold);txt("(आपणो शिव)",805,390,30,p.deep);txt("विकास",805,490,45,p.accent);txt("पारदर्शिता",805,565,35,p.deep);txt("जनसेवा",805,640,42,p.accent);
-  rr(650,710,310,245,22,"#e5f3e9","#74b294",3);txt("हर वार्ड",805,770,30,p.deep);txt("हर परिवार",805,825,30,p.deep);txt("की आवाज़",805,880,30,p.deep);
-  pill(p,1090,p.tag);txt("लूणी के उज्ज्वल भविष्य के लिए",540,1360,29,p.deep);
- }else{
-  rr(55,55,970,1375,24,"#f9e9c8",p.gold,6);txt(C.village,540,120,47,p.deep);txt(C.role,540,180,42,p.accent);
-  photo(candidate,85,265,475,760,p,p.gold);txt("शिवाराम",790,385,53,p.deep);txt("पटेल",790,450,58,p.accent);txt("(आपणो शिव)",790,510,29,p.deep);
-  rr(610,585,350,370,25,p.deep,p.gold,4);txt("युवा सोच",785,660,37,p.gold);txt("सशक्त पंचायत",785,735,30,p.cream);txt("उज्ज्वल भविष्य",785,805,30,p.cream);txt("सबका साथ",785,875,29,p.gold);
-  pill(p,1090,p.tag);txt("जनता के साथ • जनता के लिए",540,1360,29,p.deep);
- }
- applicantBlock(p);
+
+/* ---------- frame, scroll, badge ---------- */
+function frame(){
+ const g=x.createLinearGradient(0,0,W,H);g.addColorStop(0,'#fff1b3');g.addColorStop(.3,'#d9a63a');g.addColorStop(.6,'#fbe08a');g.addColorStop(1,'#b8842a');
+ x.strokeStyle=g;x.lineWidth=12;x.strokeRect(16,16,W-32,H-32);x.lineWidth=3;x.strokeRect(38,38,W-76,H-76);
+ for(const[a,b,sx,sy]of[[38,38,1,1],[W-38,38,-1,1],[38,H-38,1,-1],[W-38,H-38,-1,-1]]){x.save();x.translate(a,b);x.scale(sx,sy);x.strokeStyle=g;x.fillStyle=g;x.lineWidth=5;
+  x.beginPath();x.moveTo(0,120);x.bezierCurveTo(0,40,40,0,120,0);x.stroke();x.beginPath();x.moveTo(0,70);x.bezierCurveTo(34,70,70,34,70,0);x.stroke();
+  x.beginPath();x.arc(22,22,9,0,7);x.fill();x.beginPath();x.moveTo(0,0);x.lineTo(46,0);x.lineTo(0,46);x.closePath();x.fill();x.restore()}}
+function scroll(cx,cy,w,h,rot,l1,l2,p){
+ x.save();x.translate(cx,cy);x.rotate(rot*Math.PI/180);
+ const g=x.createLinearGradient(0,-h/2,0,h/2);g.addColorStop(0,'#fdeec2');g.addColorStop(1,'#ecc87e');
+ x.shadowColor='rgba(0,0,0,.4)';x.shadowBlur=24;x.shadowOffsetY=12;x.fillStyle=g;x.beginPath();x.roundRect(-w/2+22,-h/2,w-44,h,8);x.fill();
+ x.shadowColor='transparent';x.shadowBlur=0;x.shadowOffsetY=0;x.strokeStyle='#b9873a';x.lineWidth=3;x.stroke();
+ x.strokeStyle='rgba(185,135,58,.55)';x.lineWidth=2;x.strokeRect(-w/2+44,-h/2+14,w-88,h-28);
+ for(const sx of[-1,1]){const ex=sx*(w/2-20);const rg=x.createLinearGradient(ex-26,0,ex+26,0);rg.addColorStop(0,'#c99347');rg.addColorStop(.5,'#f6dc9e');rg.addColorStop(1,'#b9832f');x.fillStyle=rg;x.beginPath();x.ellipse(ex,0,26,h/2+14,0,0,7);x.fill();x.strokeStyle='#8f6221';x.lineWidth=3;x.stroke();x.beginPath();x.ellipse(ex,0,10,h/2-14,0,0,7);x.stroke()}
+ fit(l1,0,-34,52,30,w-150,p.acc,{w:900,f:FD});fit(l2,0,38,56,30,w-150,'#4a0716',{w:900,f:FD});
+
+ x.restore()}
+function avatar(a,b,r,p){
+ x.save();x.beginPath();x.arc(a,b,r,0,7);x.clip();
+ if(applicant)cover(applicant,a-r,b-r,2*r,2*r);else{const g=x.createLinearGradient(a,b-r,a,b+r);g.addColorStop(0,'#eceff2');g.addColorStop(1,'#b8bfc7');x.fillStyle=g;x.fillRect(a-r,b-r,2*r,2*r);x.fillStyle='#8c949e';x.beginPath();x.arc(a,b-r*.2,r*.32,0,7);x.fill();x.beginPath();x.ellipse(a,b+r*.82,r*.7,r*.55,0,0,7);x.fill()}
+ x.restore();x.strokeStyle=goldGrad(b,r*2);x.lineWidth=9;x.beginPath();x.arc(a,b,r+4,0,7);x.stroke();x.strokeStyle=p.deep2;x.lineWidth=3;x.beginPath();x.arc(a,b,r-2,0,7);x.stroke()}
+
+/* ---------- bottom strip icons ---------- */
+function icon(k,cx,cy,col){x.save();x.translate(cx,cy);x.strokeStyle=col;x.fillStyle=col;x.lineWidth=3.5;x.lineCap='round';x.lineJoin='round';
+ x.beginPath();x.arc(0,0,45,0,7);x.stroke();
+ if(k===0){x.fillRect(-20,6,10,16);x.fillRect(-5,-6,10,28);x.fillRect(10,-20,10,42);x.beginPath();x.moveTo(-22,-4);x.lineTo(-6,-16);x.lineTo(4,-8);x.lineTo(20,-26);x.stroke()}
+ if(k===1){for(const[dx,dy,r]of[[0,-12,8],[-17,-6,6],[17,-6,6]]){x.beginPath();x.arc(dx,dy,r,0,7);x.fill()}x.beginPath();x.ellipse(0,18,17,11,0,Math.PI,0);x.fill();for(const sx of[-1,1]){x.beginPath();x.ellipse(sx*24,14,9,7,0,Math.PI,0);x.fill()}}
+ if(k===2){for(let i=0;i<8;i++){x.save();x.rotate(i*Math.PI/4);x.fillRect(-4,-25,8,10);x.restore()}x.beginPath();x.arc(0,0,17,0,7);x.lineWidth=7;x.stroke();x.beginPath();x.arc(0,0,6,0,7);x.fill()}
+ if(k===3){x.beginPath();x.moveTo(-18,18);x.bezierCurveTo(-26,-14,4,-26,22,-22);x.bezierCurveTo(26,6,2,26,-18,18);x.fill();x.strokeStyle='#4a0716';x.lineWidth=3;x.beginPath();x.moveTo(-16,16);x.lineTo(10,-10);x.stroke()}
+ x.restore()}
+
+/* ---------- poster ---------- */
+function draw(ti){
+ const p=themes[ti];x.clearRect(0,0,W,H);
+ scenery(p);
+ // heading (right column)
+ const cx=760,hs={sh:['rgba(0,0,0,.45)',10,0,4]};
+ fit('ग्राम पंचायत लूणी',cx,128,66,40,500,p.ink,{f:FD,w:400,sh:hs.sh});
+ fit('सरपंच पद हेतु',cx,208,54,34,500,ti===1||ti===3||ti===4?p.acc:'#f6c850',{f:FD,w:400,sh:ti===1||ti===3?['rgba(255,255,255,.7)',8,0,2]:hs.sh});
+ x.strokeStyle=goldGrad(262,6);x.lineWidth=4;x.beginPath();x.moveTo(cx-170,262);x.lineTo(cx-18,262);x.moveTo(cx+18,262);x.lineTo(cx+170,262);x.stroke();x.fillStyle='#f0c85c';x.beginPath();x.moveTo(cx,250);x.lineTo(cx+12,262);x.lineTo(cx,274);x.lineTo(cx-12,262);x.fill();
+ fit('शिवाराम',cx,385,176,100,490,goldGrad(385,176),{f:FD,w:400,st:[p.deep2,16],sh:['rgba(0,0,0,.5)',16,0,8]});
+ fit('पटेल',cx,548,190,100,490,goldGrad(548,190),{f:FD,w:400,st:[p.deep2,16],sh:['rgba(0,0,0,.5)',16,0,8]});
+ rr(cx-135,628,270,70,35,p.deep2,'#f0c85c',4);txt('(आपणो शिव)',cx,664,40,'#fff2d2',{w:800,max:240});
+ // scroll banner
+ scroll(822,905,430,200,-5,p.s[0],p.s[1],p);
+ // candidate cutout
+ if(cand){const ph=1130,pw=ph*cand.width/cand.height;x.save();x.shadowColor='rgba(0,0,0,.45)';x.shadowBlur=36;x.shadowOffsetX=14;x.shadowOffsetY=10;x.drawImage(cand,-165,296,pw,ph);x.restore()}
+ // bottom band
+ const bg=x.createLinearGradient(0,1330,0,H);bg.addColorStop(0,p.deep);bg.addColorStop(1,p.deep2);x.fillStyle=bg;x.fillRect(0,1340,W,H-1340);
+ x.fillStyle=goldGrad(1340,14);x.fillRect(0,1334,W,12);
+ // applicant
+ txt('निवेदक',360,1418,44,'#f6c850',{al:'left',w:900});
+ x.strokeStyle='rgba(240,200,92,.5)';x.lineWidth=2;x.beginPath();x.moveTo(500,1418);x.lineTo(1030,1418);x.stroke();
+ rr(330,1448,700,104,52,'#fff8ea',goldGrad(1500,104),6);
+ fit((nm.value||'').trim()||'आपका नाम यहाँ लिखें',680,1502,56,28,630,p.deep,{w:900});
+ avatar(190,1470,112,p);
+ // strip
+ const labs=[['विकास','का संकल्प'],['जनता की','आवाज़'],['पारदर्शिता','और विकास'],['साथ, विश्वास','और प्रगति']];
+ labs.forEach((l,i)=>{const c=70+i*235+117;icon(i,c,1688,'#f6c850');txt(l[0],c,1763,31,'#fff2d2',{w:800,max:215});txt(l[1],c,1802,31,'#fff2d2',{w:800,max:215});if(i)(x.strokeStyle='rgba(240,200,92,.45)',x.lineWidth=2,x.beginPath(),x.moveTo(70+i*235,1640),x.lineTo(70+i*235,1820),x.stroke())});
+ txt('Developed by Surendra Patel',540,1862,24,'#e8d6ae',{w:600,max:700});
+ txt(PORTAL,540,1892,15,'#cdb98f',{w:500,max:980});
+ frame();
 }
-function updateThumbs(){
- gallery.innerHTML='';thumbs=[];
- themes.forEach((p,i)=>{const b=document.createElement('button');b.className='thumb'+(i===t?' active':'');b.innerHTML='<canvas width="180" height="320"></canvas><span>'+['रॉयल क्लासिक','आधुनिक प्रोफेशनल','राजस्थानी परंपरा','विकास थीम','युवा और भविष्य'][i]+'</span>';b.addEventListener('click',()=>{t=i;document.querySelectorAll('.templ').forEach(q=>q.classList.toggle('active',Number(q.dataset.t)===t));draw();updateThumbs()});gallery.appendChild(b);thumbs.push(b)});
-}
-function drawThumbs(){thumbs.forEach((b,i)=>{const c=b.querySelector('canvas'),ctx=c.getContext('2d'),p=themes[i];ctx.clearRect(0,0,c.width,c.height);ctx.fillStyle=p.bg;ctx.fillRect(0,0,c.width,c.height);ctx.strokeStyle=p.gold;ctx.lineWidth=3;ctx.strokeRect(4,4,c.width-8,c.height-8);ctx.fillStyle=p.deep;ctx.fillRect(8,8,c.width-16,76);ctx.fillStyle=p.gold;ctx.textAlign='center';ctx.font='bold 12px sans-serif';ctx.fillText('ग्राम पंचायत लूणी',90,28);ctx.fillText('शिवाराम पटेल',90,51);ctx.fillStyle=p.cream;ctx.fillRect(22,92,136,150);if(candidate){const sc=Math.min(136/candidate.width,150/candidate.height),dw=candidate.width*sc,dh=candidate.height*sc;ctx.drawImage(candidate,(180-dw)/2,92+(150-dh)/2,dw,dh)}ctx.fillStyle=p.deep;ctx.fillRect(10,250,160,58);ctx.fillStyle=p.gold;ctx.font='bold 10px sans-serif';ctx.fillText(['आपका विश्वास','बेहतर कल','म्हारी लूणी','विकास','नई सोच'][i],90,270);ctx.fillText('निवेदक',90,290)});document.querySelectorAll('.templ').forEach(q=>q.classList.toggle('active',Number(q.dataset.t)===t))}
+function render(ctx,scale,ti){x=ctx;x.save();x.setTransform(scale,0,0,scale,0,0);draw(ti);x.restore()}
+
+/* ---------- UI ---------- */
+function buildThumbs(){gallery.innerHTML='';thumbs=[];NAMES.forEach((n,i)=>{const b=document.createElement('button');b.className='thumb'+(i===t?' active':'');b.innerHTML='<canvas width="216" height="384"></canvas><span>'+n+'</span>';b.addEventListener('click',()=>{t=i;refresh(false)});gallery.appendChild(b);thumbs.push(b)})}
+function drawThumbs(){thumbs.forEach((b,i)=>{b.classList.toggle('active',i===t);render(b.querySelector('canvas').getContext('2d'),216/W,i)})}
+let tt;function refresh(thumbToo=true){render(cv.getContext('2d'),1,t);thumbs.forEach((b,i)=>b.classList.toggle('active',i===t));if(thumbToo){clearTimeout(tt);tt=setTimeout(drawThumbs,220)}else drawThumbs()}
 function loadImg(src,cb){const im=new Image();im.onload=()=>cb(im);im.onerror=()=>cb(null);im.src=src}
-loadImg('candidate-photo.jpg',im=>{candidate=im;draw();updateThumbs()});
-nm.addEventListener('input',draw);
-file.addEventListener('change',()=>{const f=file.files&&file.files[0];if(!f){applicant=null;draw();return}if(!f.type.startsWith('image/')){alert('कृपया फोटो फ़ाइल चुनें');return}const r=new FileReader();r.onload=e=>loadImg(e.target.result,im=>{applicant=im;draw()});r.readAsDataURL(f)});
-document.querySelectorAll('.templ').forEach(b=>b.addEventListener('click',()=>{t=Number(b.dataset.t);draw();updateThumbs()}));
-document.getElementById('dl').addEventListener('click',()=>cv.toBlob(blob=>{if(!blob){alert('पोस्टर डाउनलोड नहीं हो पाया।');return}const u=URL.createObjectURL(blob),a=document.createElement('a');a.href=u;a.download='shivaram-patel-luni-poster.png';a.click();setTimeout(()=>URL.revokeObjectURL(u),1500)},'image/png'));
-document.getElementById('share').addEventListener('click',async()=>{try{const blob=await new Promise(resolve=>cv.toBlob(resolve,'image/png'));if(!blob)throw Error();const f=new File([blob],'shivaram-patel-luni-poster.png',{type:'image/png'});if(navigator.share&&navigator.canShare&&navigator.canShare({files:[f]})){await navigator.share({files:[f],title:'शिवाराम पटेल लूणी — पोस्टर',text:'अपना पोस्टर यहाँ बनाएँ: '+PORTAL})}else{document.getElementById('dl').click();alert('पोस्टर डाउनलोड हो गया। अब WhatsApp Status, Instagram या Facebook में इसे अपलोड करें।')}}catch(e){if(e.name!=='AbortError')alert('पोस्टर डाउनलोड करके अपने ऐप में शेयर करें।')}});
+nm.addEventListener('input',()=>refresh());
+file.addEventListener('change',()=>{const f=file.files&&file.files[0];if(!f){applicant=null;refresh();return}if(!f.type.startsWith('image/')){alert('कृपया फोटो फ़ाइल चुनें');return}const r=new FileReader();r.onload=e=>loadImg(e.target.result,im=>{applicant=im;refresh()});r.readAsDataURL(f)});
+const saveName='shivaram-patel-luni-poster.png';
+function blobOf(){return new Promise(res=>{render(cv.getContext('2d'),1,t);cv.toBlob(res,'image/png')})}
+document.getElementById('dl').addEventListener('click',async()=>{const blob=await blobOf();if(!blob){alert('पोस्टर डाउनलोड नहीं हो पाया।');return}const u=URL.createObjectURL(blob),a=document.createElement('a');a.href=u;a.download=saveName;a.click();setTimeout(()=>URL.revokeObjectURL(u),1500)});
+document.getElementById('share').addEventListener('click',async()=>{try{const blob=await blobOf();if(!blob)throw Error();const f=new File([blob],saveName,{type:'image/png'});if(navigator.share&&navigator.canShare&&navigator.canShare({files:[f]})){await navigator.share({files:[f],title:'शिवाराम पटेल लूणी — पोस्टर',text:'अपना पोस्टर यहाँ बनाएँ: '+PORTAL})}else{document.getElementById('dl').click();alert('पोस्टर डाउनलोड हो गया। अब WhatsApp Status, Instagram या Facebook में इसे अपलोड करें।')}}catch(e){if(e.name!=='AbortError')alert('पोस्टर डाउनलोड करके अपने ऐप में शेयर करें।')}});
 document.getElementById('wa').addEventListener('click',()=>window.open('https://wa.me/?text='+encodeURIComponent('शिवाराम पटेल लूणी का पोस्टर देखें। अपना पोस्टर यहाँ बनाएँ: '+PORTAL),'_blank','noopener'));
 document.getElementById('copy').addEventListener('click',async()=>{try{await navigator.clipboard.writeText(PORTAL);alert('पोर्टल लिंक कॉपी हो गई!')}catch(e){prompt('इस लिंक को कॉपी करें:',PORTAL)}});
-document.getElementById('reset').addEventListener('click',()=>{nm.value='';file.value='';applicant=null;t=0;draw();updateThumbs()});
-updateThumbs();draw();
+document.getElementById('reset').addEventListener('click',()=>{nm.value='';file.value='';applicant=null;t=0;refresh(false)});
+
+buildThumbs();
+const fontsReady=Promise.all([document.fonts.load('400 60px "Rozha One"','शिवाराम पटेल'),document.fonts.load('800 30px "Noto Sans Devanagari"','निवेदक आपका'),document.fonts.load('900 30px "Noto Sans Devanagari"','आपका')]).catch(()=>{});
+loadImg('candidate-cutout.png',im=>{cand=im;fontsReady.then(()=>{refresh(false);document.fonts.ready.then(()=>refresh(false))})});
 })();
 </script>
 </body>
