@@ -76,7 +76,7 @@ canvas{display:block;width:100%;height:auto}
 <section class="preview">
 <div class="preview-head"><h2>पोस्टर प्रीव्यू</h2><span class="pill">1080 × 1920 · स्टेटस साइज</span></div>
 <div class="canvas-wrap"><canvas id="poster" width="1080" height="1920"></canvas></div>
-<p class="footer-note">Developed by Surendra Patel</p>
+
 </section>
 <section class="gallery">
 <h2>सभी टेम्पलेट प्रीव्यू</h2>
@@ -101,7 +101,7 @@ function fit(s,a,b,max,min,width,color,weight=900){let z=max;do{x.font=`${weight
 function rr(a,b,w,h,r,fill,stroke,lw=4){x.beginPath();x.roundRect(a,b,w,h,r);if(fill){x.fillStyle=fill;x.fill()}if(stroke){x.strokeStyle=stroke;x.lineWidth=lw;x.stroke()}}
 function cover(im,a,b,w,h){if(!im)return;const sc=Math.max(w/im.width,h/im.height),dw=im.width*sc,dh=im.height*sc;x.save();x.beginPath();x.rect(a,b,w,h);x.clip();x.drawImage(im,a+(w-dw)/2,b+(h-dh)/2,dw,dh);x.restore()}
 function ornate(p){x.strokeStyle=p.gold;x.lineWidth=4;x.strokeRect(24,24,1032,1872);x.lineWidth=2;x.strokeRect(42,42,996,1836);for(const [a,b,sx,sy] of [[55,55,1,1],[1025,55,-1,1],[55,1865,1,-1],[1025,1865,-1,-1]]){x.save();x.translate(a,b);x.scale(sx,sy);x.strokeStyle=p.gold;x.lineWidth=3;x.beginPath();x.moveTo(0,55);x.quadraticCurveTo(0,0,55,0);x.lineTo(90,0);x.moveTo(0,27);x.quadraticCurveTo(27,27,27,0);x.stroke();x.restore()}}
-function photo(im,a,b,w,h,p,label){x.save();x.beginPath();x.roundRect(a,b,w,h,22);x.clip();if(im)cover(im,a,b,w,h);else{const g=x.createLinearGradient(a,b,a+w,b+h);g.addColorStop(0,'#c9e7ff');g.addColorStop(1,'#7db9ed');x.fillStyle=g;x.fillRect(a,b,w,h);txt(label,a+w/2,b+h/2,25,'#244c70',700)}x.restore();rr(a,b,w,h,22,null,p.gold,5)}
+function photo(im,a,b,w,h,p,label){x.save();x.beginPath();x.roundRect(a,b,w,h,22);x.clip();x.fillStyle=(p.cream||"#fff8e9");x.fillRect(a,b,w,h);if(im){const sc=Math.min(w/im.width,h/im.height),dw=im.width*sc,dh=im.height*sc;x.drawImage(im,a+(w-dw)/2,b+(h-dh)/2,dw,dh)}else{const g=x.createLinearGradient(a,b,a+w,b+h);g.addColorStop(0,'#c9e7ff');g.addColorStop(1,'#7db9ed');x.fillStyle=g;x.fillRect(a,b,w,h);txt(label,a+w/2,b+h/2,25,'#244c70',700)}x.restore();rr(a,b,w,h,22,null,p.gold,5)}
 function pill(p,y,s){rr(120,y,840,76,24,p.deep,p.gold,3);txt(s,540,y+38,30,p.cream,800,'center',790)}
 function applicantBlock(p){
  rr(65,1470,950,315,28,p.deep,p.gold,5);
@@ -127,8 +127,8 @@ function draw(){
  }else if(t===1){
   rr(55,55,970,1375,26,p.cream,p.gold,6);txt(C.village,540,120,49,p.deep);txt(C.role,540,180,42,p.accent);
   txt("शिवाराम पटेल",540,275,62,p.deep);txt("(आपणो शिव)",540,330,30,p.accent);
-  photo(candidate,130,385,820,670,p,p.gold);pill(p,1090,p.tag);
-  txt("जनता की आवाज़",540,1245,33,p.deep);txt("विकास का संकल्प",540,1300,33,p.accent);
+  photo(candidate,185,365,710,800,p,p.gold);pill(p,1190,p.tag);
+  txt("जनता की आवाज़",540,1310,33,p.deep);txt("विकास का संकल्प",540,1360,33,p.accent);
  }else if(t===2){
   txt("म्हारी लूणी • म्हारो मान",540,115,36,p.gold);txt(C.village,540,180,47,p.cream);txt(C.role,540,240,40,p.gold);
   photo(candidate,95,300,890,760,p,p.gold);txt("शिवाराम पटेल",540,1120,62,p.gold);txt("(आपणो शिव)",540,1180,31,p.cream);
@@ -151,7 +151,7 @@ function updateThumbs(){
  gallery.innerHTML='';thumbs=[];
  themes.forEach((p,i)=>{const b=document.createElement('button');b.className='thumb'+(i===t?' active':'');b.innerHTML='<canvas width="180" height="320"></canvas><span>'+['रॉयल क्लासिक','आधुनिक प्रोफेशनल','राजस्थानी परंपरा','विकास थीम','युवा और भविष्य'][i]+'</span>';b.addEventListener('click',()=>{t=i;document.querySelectorAll('.templ').forEach(q=>q.classList.toggle('active',Number(q.dataset.t)===t));draw();updateThumbs()});gallery.appendChild(b);thumbs.push(b)});
 }
-function drawThumbs(){const old=cv.getContext('2d');const saveT=t;thumbs.forEach((b,i)=>{const c=b.querySelector('canvas'),ctx=c.getContext('2d');ctx.clearRect(0,0,c.width,c.height);ctx.fillStyle=themes[i].bg;ctx.fillRect(0,0,c.width,c.height);ctx.strokeStyle=themes[i].gold;ctx.lineWidth=3;ctx.strokeRect(4,4,c.width-8,c.height-8);ctx.fillStyle=themes[i].deep;ctx.fillRect(8,8,c.width-16,100);ctx.fillStyle=themes[i].gold;ctx.textAlign='center';ctx.font='bold 14px sans-serif';ctx.fillText('ग्राम पंचायत लूणी',90,30);ctx.fillText('शिवाराम पटेल',90,58);ctx.fillStyle=themes[i].cream;ctx.fillRect(12,115,156,110);if(candidate){const sc=Math.max(156/candidate.width,110/candidate.height);ctx.drawImage(candidate,(180-candidate.width*sc)/2,115+(110-candidate.height*sc)/2,candidate.width*sc,candidate.height*sc)}ctx.fillStyle=themes[i].deep;ctx.fillRect(10,230,160,78);ctx.fillStyle=themes[i].gold;ctx.font='bold 11px sans-serif';ctx.fillText(['आपका विश्वास','बेहतर कल','म्हारी लूणी','विकास','नई सोच'][i],90,252);ctx.fillText('निवेदक',90,277)});document.querySelectorAll('.templ').forEach(q=>q.classList.toggle('active',Number(q.dataset.t)===t))}
+function drawThumbs(){thumbs.forEach((b,i)=>{const c=b.querySelector('canvas'),ctx=c.getContext('2d'),p=themes[i];ctx.clearRect(0,0,c.width,c.height);ctx.fillStyle=p.bg;ctx.fillRect(0,0,c.width,c.height);ctx.strokeStyle=p.gold;ctx.lineWidth=3;ctx.strokeRect(4,4,c.width-8,c.height-8);ctx.fillStyle=p.deep;ctx.fillRect(8,8,c.width-16,76);ctx.fillStyle=p.gold;ctx.textAlign='center';ctx.font='bold 12px sans-serif';ctx.fillText('ग्राम पंचायत लूणी',90,28);ctx.fillText('शिवाराम पटेल',90,51);ctx.fillStyle=p.cream;ctx.fillRect(22,92,136,150);if(candidate){const sc=Math.min(136/candidate.width,150/candidate.height),dw=candidate.width*sc,dh=candidate.height*sc;ctx.drawImage(candidate,(180-dw)/2,92+(150-dh)/2,dw,dh)}ctx.fillStyle=p.deep;ctx.fillRect(10,250,160,58);ctx.fillStyle=p.gold;ctx.font='bold 10px sans-serif';ctx.fillText(['आपका विश्वास','बेहतर कल','म्हारी लूणी','विकास','नई सोच'][i],90,270);ctx.fillText('निवेदक',90,290)});document.querySelectorAll('.templ').forEach(q=>q.classList.toggle('active',Number(q.dataset.t)===t))}
 function loadImg(src,cb){const im=new Image();im.onload=()=>cb(im);im.onerror=()=>cb(null);im.src=src}
 loadImg('candidate-photo.jpg',im=>{candidate=im;draw();updateThumbs()});
 nm.addEventListener('input',draw);
